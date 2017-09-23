@@ -50,7 +50,7 @@ public class RMIClient extends UnicastRemoteObject implements InterfClient {
                 // Connect to remote object
                 System.setProperty("java.rmi.server.hostname", Lib.getMyIp());
                 InterfClient client = new RMIClient();
-                Registry r = LocateRegistry.getRegistry(host, port);
+                Registry r = LocateRegistry.getRegistry(port,host);
                 InterfServer server = (InterfServer) r.lookup("SERVER");
                 server.register(client);
                 System.out.println("Worker's ID: " + ((RMIClient) client).getIP());

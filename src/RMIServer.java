@@ -60,7 +60,7 @@ public class RMIServer extends UnicastRemoteObject implements InterfServer {
             clients = new ArrayList<>();
             System.setProperty("java.rmi.server.hostname", Lib.getMyIp());
             //đăng ký dịch vụ
-            Registry r = LocateRegistry.createRegistry(8850);
+            Registry r = LocateRegistry.createRegistry(8849);
             InterfServer server;
             server = new RMIServer();
             r.rebind("SERVER", server);
