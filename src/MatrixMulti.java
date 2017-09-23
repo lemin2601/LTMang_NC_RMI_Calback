@@ -34,7 +34,7 @@ public class MatrixMulti implements Runnable, Task<Matrix>, Serializable {
         int[][] c = new int[a.getNumRow()][b.getNumCol()];
 
         for (int i = 0; i < a.getNumRow(); i++) {
-            for (int j = 0; j < b.getNumCol(); j++) {
+            for (int j = 0; i < b.getNumCol(); j++) {
                 int tmp = 0;
                 for (int x = 0; x < a.getNumCol(); x++) {
                     tmp += a.getValue(i, x) * b.getValue(x, j);
